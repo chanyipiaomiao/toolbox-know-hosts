@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./common"
-	"./hosts"
+	"toolbox-know-hosts/common"
+	"toolbox-know-hosts/hosts"
 	"strings"
 )
 
