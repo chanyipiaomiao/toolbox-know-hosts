@@ -7,11 +7,13 @@ import (
 	"os"
 )
 
+// 获取当前时间
 func GetNowTime() string {
 	t := time.Now()
 	return fmt.Sprintf("%d%d%d%d%d%d", t.Year(),t.Month(),t.Day(), t.Hour(), t.Minute(), t.Second())
 }
 
+// 获取用户的家目录
 func GetUserHome()(string, error)  {
 	currentUser, err := user.Current()
 	if err == nil {
