@@ -1,4 +1,4 @@
-package common
+package hosts
 
 import (
 	"os"
@@ -74,7 +74,8 @@ func (knowHost *KnowHost) BackupFile() (written int64, err error) {
 	}
 	defer  dst.Close()
 
-	return io.Copy(dst, src)
+	written, err = io.Copy(dst, src)
+	return written, err
 
 }
 

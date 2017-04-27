@@ -2,6 +2,8 @@ package main
 
 import (
 	"./common"
+	"./hosts"
+	"strings"
 )
 
 const (
@@ -12,7 +14,7 @@ const (
 func main() {
 	home, _ := common.GetUserHome()
 	path := home + KnownHostsPath
-	knowHost := &common.KnowHost{SrcName: path, DstName:path + common.GetNowTime()}
+	knowHost := &hosts.KnowHost{SrcName: path, DstName: strings.Join([]string{path, "." ,common.GetNowTime()}, "")}
 	knowHost.BackupFile()
 	lines := knowHost.FileHandler(knowHost.ReadFile())
 	knowHost.WriteFile(lines)

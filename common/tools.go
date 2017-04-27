@@ -19,7 +19,7 @@ func GetUserHome()(string, error)  {
 	} else {
 		home := os.Getenv("HOME")
 		if home == ""{
-			fmt.Println("User Home Env Not Found")
+			fmt.Println("User < HOME > Env Not Found")
 			os.Exit(1)
 		}
 		return home, nil
